@@ -24,6 +24,15 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list = List.find(params[:id])
+  end
+  
+  def update
+    list = List.find(params[:id])
+    #データを更新する・保存できるかパラメータで絞り込む
+    list.update(list_params)
+    #詳細画面に移動します
+    redirect_to list_path(list.id)
   end
 
 
