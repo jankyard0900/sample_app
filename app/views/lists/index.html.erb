@@ -3,9 +3,15 @@
 <% @lists.each do |list| %>
 
   <p>タイトル</p>
-  <!-- <span></span> を削除して、以下コードに変更 -->
   <span>
     <%= link_to list.title, list_path(list.id) %>
   </span>
-
+  
+  <h4>画像</h4>
+  <% if list.image.attached? %>
+    <%= image_tag list.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
+  
 <% end %>
