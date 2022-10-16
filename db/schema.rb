@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2022_09_04_073544) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
+    t.string "title", null: false
+    t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
